@@ -1,0 +1,26 @@
+O arquivo mundo1.pl possui o primeiro
+   mundo a ser trabalhado.
+
+O arquivo regras-basicas.pl possui algumas
+   implementacoes que eu ja criei para
+   facilitar o trabalho de voces.
+_____________________________
+Para utilizar o código,
+execute o gprolog e utilize:
+
+?- consult('trabalho.pl').
+?- listing.
+_____________________________
+
+Para entender melhor, execute:
+
+?- consult('trabalho.pl').
+?- imprimeMundo.
+?- definePosicao( [2,3], 'P' ).
+?- imprimeMundo.
+?- achouTesouro( [1,2] ).
+?- achouTesouro( [2,3] ).
+?- morreu( [1,1] ).
+?- morreu( [2,2] ).
+?- posicaoValida( [1,3] ).
+?- posicaoValida( [1,4] ).
