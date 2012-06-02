@@ -1,5 +1,6 @@
 marcarVizinhos( [ X, Y ], Sentido ) :- 
 	(
+	(
 	posicaoValida( [X,Y] ),
 	Sentido == ( nada ),
 	definePosicao([X+1,Y], '.'),
@@ -215,7 +216,7 @@ marcarVizinhos( [ X, Y ], Sentido ) :-
 	Sentido == ( brisa ),
 	mundo([X+1,Y],'?'),
 	definePosicao([X+1,Y], 'P?')
-	).
+	);imprimeMundo).
 %--------------------------------------------------------------------------------------%
 
 

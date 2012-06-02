@@ -2,16 +2,17 @@ caminha(Pilha) :-
 	[Pos|Resto] = Pilha,
 	move(Pos),
 	not(morreu(Pos)),
-	not(achouTesouro(Pos)),
-	percepcao(Pos,Sentido,POSICAO),
-	defineCaractere(POSICAO,Y),
-	definePosicao(Pos,Y),
-	marcarVizinhos(Pos,Sentido),
-	geraPossibilidades(Pos,Resto,NovaPilha),
-	imprimeMundo,
-	caminha(NovaPilha)
+	not(achouTesouro(Pos));
+	(
+		percepcao(Pos,Sentido,POSICAO),
+		defineCaractere(POSICAO,Y),
+		definePosicao(Pos,Y),
+		marcarVizinhos(Pos,Sentido),
+		geraPossibilidades(Pos,Resto,NovaPilha),
+		caminha(NovaPilha)
+	)
 .
-
+/*
 caminha(Pilha) :- 
 	[Pos|Resto] = Pilha,
 	move(Pos),
@@ -27,5 +28,5 @@ caminha(Pilha) :-
 	write("Achou tesouro!!!\n")
 .
 	
-	
+*/
 	
