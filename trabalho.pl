@@ -7,10 +7,16 @@ carregaMundo :-
 	consult('mundo1.pl').
 
 carregaRegras :-
-	consult('regras-basicas.pl').
+	consult('regras-basicas.pl'),
+	consult('caminha.pl'),
+	consult('marcaVizinhos.pl'),
+	consult('possibilidades.pl'),
+	consult('pilha.pl').
 
 
 carregaTudo :-
 	carregaMundo, carregaRegras.
 
-:- initialization(carregaTudo).
+main :- 
+	carregaTudo, caminha([[1,1]])
+:- initialization(main).
