@@ -28,13 +28,13 @@ move(Pos) :- posicaoValida(Pos),
 
 defineCaractere(X,Y) :-
 	X == ( nada ), 
-	Y is '.', !.
+	Y = '.', !.
 defineCaractere(X,Y) :-
 	X == ( tesouro ), 
-	Y is 'T', !.
+	Y = 'T', !.
 defineCaractere(X,Y) :-
 	X == ( poco ), 
-	Y is 'P', !.
+	Y = 'P', !.
 
 
 definePosicao(Pos, X) :- posicaoValida(Pos),

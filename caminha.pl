@@ -1,5 +1,5 @@
 caminha(Pilha) :- 
-	[X|Resto] = Pilha,
+	[Pos|Resto] = Pilha,
 	move(Pos),
 	not(morreu(Pos)),
 	not(achouTesouro(Pos)),
@@ -7,22 +7,25 @@ caminha(Pilha) :-
 	defineCaractere(POSICAO,Y),
 	definePosicao(Pos,Y),
 	marcarVizinhos(Pos,Sentido),
-	geraPossibilidades(X,Resto,NovaPilha),
-	caminha(NovaPilha),
-!.
+	geraPossibilidades(Pos,Resto,NovaPilha),
+	imprimeMundo,
+	caminha(NovaPilha)
+.
 
-caminha(Pos,Pilha) :- 
+caminha(Pilha) :- 
+	[Pos|Resto] = Pilha,
 	move(Pos),
 	morreu(Pos),
-	write("Morreu\n"),
-!.
+	write("Morreu\n")
+.
 
 
-caminha(Pos,Pilha) :- 
+caminha(Pilha) :- 
+	[Pos|Resto] = Pilha,
 	move(Pos),
 	achouTesouro(Pos),
-	write("Achou tesouro!!!\n"),
-!.
+	write("Achou tesouro!!!\n")
+.
 	
 	
 	

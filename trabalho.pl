@@ -3,6 +3,8 @@
 % by Jeiks
 %
 
+not(P) :- (call(P) -> fail ; true). %clausula not()
+
 carregaMundo :-
 	consult('mundo1.pl').
 
@@ -18,5 +20,8 @@ carregaTudo :-
 	carregaMundo, carregaRegras.
 
 main :- 
-	carregaTudo, caminha([[1,1]])
+	carregaTudo, caminha([[1,1]]).
+
 :- initialization(main).
+
+
