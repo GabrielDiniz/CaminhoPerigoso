@@ -1,3 +1,5 @@
+% regras pra tratar pilhas
+
 insereNaPilha(X,L,[X|L]).
 
 excluiDaPilha(X, [X | Tail ] , Tail ) .

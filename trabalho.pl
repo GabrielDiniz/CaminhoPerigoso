@@ -1,8 +1,8 @@
 % Mundo inicial a ser utilizado no trabalho
 % Para mundos maiores, sigam esse modelo
 % by Jeiks
-%
-
+%%---------------------------------------%%
+% para iniciar chamar : caminha([[1,1]]).
 not(P) :- (call(P) -> fail ; true). %clausula not()
 
 carregaMundo :-
@@ -15,12 +15,11 @@ carregaRegras :-
 	consult('possibilidades.pl'),
 	consult('pilha.pl').
 
-
 carregaTudo :-
 	carregaMundo, carregaRegras.
 
 main :- 
-	carregaTudo, caminha([[1,1]]).
+	carregaTudo.
 
 :- initialization(main).
 
